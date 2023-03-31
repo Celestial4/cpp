@@ -4,8 +4,10 @@ template<class DataItem>
 class BinarySearchTree
 {
 public:
-	BinarySearchTree();
-	~BinarySearchTree();
+	BinarySearchTree() = default;
+	~BinarySearchTree() {
+		empty(root);
+	}
 
 private:
 	struct BTNode
