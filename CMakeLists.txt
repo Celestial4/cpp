@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.10)
+project(leetcode)
+aux_source_directory(src SOURCE)
+aux_source_directory(. MAIN)
+include_directories(include)
+add_executable(main ${SOURCE} ${MAIN})
