@@ -1,6 +1,7 @@
+#include "header.h"
+
 namespace tree
 {
-
     struct TreeNode
     {
         int val;

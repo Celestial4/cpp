@@ -6,6 +6,4 @@
 #include <map>
 #include <queue>
 
-#include "tree.h"
-
 void solveSameTree();
