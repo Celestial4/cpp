@@ -1,4 +1,4 @@
-#include "../include/LRUCach.h"
+#include "../include/LRUCache.h"
 
 using list = LRUCache;
 using node = LRUCachNode;
