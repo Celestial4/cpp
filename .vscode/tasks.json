@@ -15,7 +15,7 @@
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
-                "cwd": "D:/Program Files/MinGW/bin"
+                "cwd": "D:/msys64/mingw64/bin"
             },
             "problemMatcher": [
                 "$gcc"
@@ -30,7 +30,7 @@
         },
         {
             "label": "make",
-            "command": "make"
+            "command": "mingw32-make"
         },
         {
             "label": "build leetcode",

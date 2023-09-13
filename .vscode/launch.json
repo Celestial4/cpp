@@ -8,11 +8,11 @@
             "program": "${workspaceFolder}\\build\\main.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "D:/Program Files/MinGW/bin",
+            "cwd": "D:/msys64/mingw64/bin",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-            "miDebuggerPath": "D:\\Program Files\\MinGW\\bin\\gdb.exe",
+            "miDebuggerPath": "D:/msys64/mingw64/bin/gdb.exe",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -23,8 +23,17 @@
                     "description": "Set Disassembly Flavor to Intel",
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
+                },
+                //gdb不仅如此std::
+                {
+                    "text": "-interpreter-exec console \"skip -rfu std::.*\"",
+                    "ignoreFailures": false
                 }
             ],
+            "symbolLoadInfo": {//gdb不进入系统库
+                "loadAll": false,
+                "exceptionList": ""
+            },
             "preLaunchTask": "build leetcode"
         }
     ]
