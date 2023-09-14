@@ -1,12 +1,3 @@
-#include <iostream>
-#include <algorithm>
-#include <vector>
-#include <string>
-#include <stack>
-#include <map>
-#include <queue>
-#include <cmath>
+#include "bits/stdc++.h"
 
-void solveSameTree();
-
-void solve_128();
+using namespace std;

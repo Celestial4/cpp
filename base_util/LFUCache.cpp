@@ -3,7 +3,7 @@
 using namespace std;
 using lfu = LFUCache;
 using node = LFUCacheNode;
-using list = LFUCache_deque;
+using list_ = LFUCache_deque;
 
 LFUCache::LFUCache(/* args */)
 {
@@ -27,13 +27,13 @@ void lfu::put(int k, int v)
         node *p = kn_map[k];
         p->v = v;
         int old_f = p->f;
-        list *lp = fl_map[old_f];
+        list_ *lp = fl_map[old_f];
         // update freq-list map
         remove(p, lp);
         p->f++;
         if (fl_map.find(p->f) != fl_map.end())
         {
-            list *nlp = fl_map[p->f];
+            list_ *nlp = fl_map[p->f];
             // if the number of element of deque under frequency f reach the capacity
             if (nlp->size == capacity)
             {
@@ -57,13 +57,13 @@ void lfu::put(int k, int v)
 
         if (fl_map.find(1) == fl_map.end())
         {
-            list *nlp = new list();
+            list_ *nlp = new list_();
             nlp->size = 0;
             nlp->f = 1;
             nlp->tail = nlp->head = nullptr;
             fl_map[1] = nlp;
         }
-        list *lp = fl_map[1];
+        list_ *lp = fl_map[1];
         if (lp->size == capacity)
         {
             remove(lp->tail, lp);
@@ -86,11 +86,11 @@ int lfu::get(int k)
     return -1;
 }
 
-void lfu::add(node *p, list *&lp)
+void lfu::add(node *p, list_ *&lp)
 {
     if (lp == nullptr)
     {
-        lp = new list();
+        lp = new list_();
         lp->f = p->f;
         lp->head = lp->tail = p;
         lp->size = 1;
@@ -108,7 +108,7 @@ void lfu::add(node *p, list *&lp)
     lp->size++;
 }
 
-void lfu::remove(node *p, list *lp)
+void lfu::remove(node *p, list_ *lp)
 {
     node *head = lp->head, *tail = lp->tail;
     if (p == head)

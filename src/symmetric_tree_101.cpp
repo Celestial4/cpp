@@ -13,7 +13,7 @@ void reverse_tree(node *root)
     }
 }
 
-bool is_same(node *p, node *q)
+bool is_same_tree(node *p, node *q)
 {
     if (p == nullptr && p == q)
     {
@@ -27,7 +27,7 @@ bool is_same(node *p, node *q)
     {
         if (p->val == q->val)
         {
-            return is_same(p->left, q->left) && is_same(p->right, q->right);
+            return is_same_tree(p->left, q->left) && is_same_tree(p->right, q->right);
         }
         else
         {
@@ -44,5 +44,5 @@ void solve_symmetric_tree_101(node *root)
     }
     node *l = root->left;
     reverse_tree(l);
-    std::cout << is_same(l, root->right) ? "true" : "false";
+    std::cout << is_same_tree(l, root->right) ? "true" : "false";
 }

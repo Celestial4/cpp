@@ -1,24 +1,24 @@
 #include "../include/LRUCache.h"
 
-using list = LRUCache;
+using list_ = LRUCache;
 using node = LRUCachNode;
-list::LRUCache()
+list_::LRUCache()
 {
     init(5);
 }
 
-list::LRUCache(int c)
+list_::LRUCache(int c)
 {
     init(c);
 }
 
-void list::init(int capacity)
+void list_::init(int capacity)
 {
-    list::capacity = capacity;
+    list_::capacity = capacity;
     head = tail = nullptr;
 }
 
-void list::put(int k, int v)
+void list_::put(int k, int v)
 {
     if (cache.find(k) != cache.end())
     {
@@ -46,7 +46,7 @@ void list::put(int k, int v)
     }
 }
 
-int list::get(int k)
+int list_::get(int k)
 {
     if (cache.find(k) != cache.end())
     {//找到结点，就更新它
@@ -61,7 +61,7 @@ int list::get(int k)
     }
 }
 
-void list::add(node *p)
+void list_::add(node *p)
 {
     p->next = head;
     if (head != nullptr)
@@ -75,7 +75,7 @@ void list::add(node *p)
     }
 }
 
-void list::remove(node *p)
+void list_::remove(node *p)
 {
     if (p == head)
     {

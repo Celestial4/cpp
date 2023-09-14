@@ -1,9 +1,4 @@
 #include "../include/header.h"
-
 using namespace std;
 
-int main()
-{
-    
-    return 0;
-}
+void quick_sort(vector<int> &arr, int i, int j);
